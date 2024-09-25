@@ -1,0 +1,3190 @@
+{
+	"info": {
+		"_postman_id": "c4cdb43c-8911-4465-bfa8-f8ff92343732",
+		"name": "go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16677606",
+		"_collection_link": "https://tarkiman.postman.co/workspace/MyQPro~2fdc6b81-56f1-4980-b518-11483009c941/collection/16677606-c4cdb43c-8911-4465-bfa8-f8ff92343732?action=share&source=collection_link&creator=16677606"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/v1/user/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/user/2",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"suenah\",\n    \"password\": \"suenah\",\n    \"name\": \"Suenah\",\n    \"email\": \"suenah.wati@gmail.com\",\n    \"telephone\": \"085222242222\",\n    \"image\": \"https://source.unsplash.com/user/c_v_r/600x600\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"subdistrict\": 321330,\n    \"district\": 3213,\n    \"province\": 32,\n    \"roles\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/user",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/user/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/user/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/user/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"willy\",\n    \"password\": \"willy\",\n    \"name\": \"Nikita Willy Julianty\",\n    \"email\": \"willy@gmail.com\",\n    \"telephone\": \"085222242222\",\n    \"image\": \"https://source.unsplash.com/user/c_v_r/600x600\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"subdistrict\": 321330,\n    \"district\": 3213,\n    \"province\": 32,\n    \"roles\": [\n        2\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/user/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/user/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/user/b41a7b16-4880-46b9-8ffc-240157bfa52b",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"b41a7b16-4880-46b9-8ffc-240157bfa52b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "/v1/profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/profile",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tarkiman\",\n    \"password\": \"password\",\n    \"name\": \"Tarkiman\",\n    \"email\": \"tarkiman.zone@gmail.com\",\n    \"telephone\": \"085222242222\",\n    \"image\": \"https://source.unsplash.com/user/c_v_r/600x600\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"subdistrict\": 321330,\n    \"district\": 3213,\n    \"province\": 32,\n    \"whatsapp\": \"085222241987\",\n    \"institutionID\": 1,\n    \"website\": \"myqpro.id\",\n    \"description\": \"test description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/profile",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "/v1/property/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/property",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"propertyName\": \"Kantor Kota Subang\",\n    \"description\": \"Kantor Kota Subang\",\n    \"idCategory\": 1,\n    \"idLocation\": 3204,\n    \"status\": \"PUBLISHED\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"zipCode\": \"41255\",\n    \"price\": 500000000,\n    \"rentType\": \"ANNUALY\",\n    \"googleStreet\": \"https://www.google.com/maps/embed?pb=!4v1696082662722!6m8!1m7!1sRycvg3UjZKFPE_tOsaktUw!2m2!1d-6.892645513195601!2d107.6405784874302!3f329.7155379303256!4f-0.21498841283799663!5f0.7820865974627469\",\n    \"googleMap\": \"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.56147751789024!2d107.64026446085754!3d-6.892559789845498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1696082538117!5m2!1sid!2sid\",\n    \"longitude\": \"-6.8925713\",\n    \"latitude\": \"107.6402772\",\n    \"images\": [\n        \"https://source.unsplash.com/user/c_v_r/600x600\",\n        \"https://source.unsplash.com/user/c_v_r/600x600\"\n    ],\n    \"videoUrl\": \"https://www.youtube.com/watch?v=b7KYGaz3Cws\",\n    \"details\": [\n        {\n            \"idDetail\": 1,\n            \"value\": \"100\"\n        },\n        {\n            \"idDetail\": 2,\n            \"value\": \"50\"\n        }\n    ],\n    \"facilities\": [\n        {\n            \"idFacility\": 1\n        },\n        {\n            \"idFacility\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/property/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"property_name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/property/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"propertyName\": \"Kantor Kota Subang\",\n    \"description\": \"Kantor Kota Subang\",\n    \"idCategory\": 1,\n    \"idLocation\": 3204,\n    \"status\": \"PUBLISHED\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"zipCode\": \"41255\",\n    \"price\": 500000000,\n    \"rentType\": \"ANNUALY\",\n    \"googleStreet\": \"https://www.google.com/maps/embed?pb=!4v1696082662722!6m8!1m7!1sRycvg3UjZKFPE_tOsaktUw!2m2!1d-6.892645513195601!2d107.6405784874302!3f329.7155379303256!4f-0.21498841283799663!5f0.7820865974627469\",\n    \"googleMap\": \"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.56147751789024!2d107.64026446085754!3d-6.892559789845498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1696082538117!5m2!1sid!2sid\",\n    \"longitude\": \"-6.8925713\",\n    \"latitude\": \"107.6402772\",\n    \"images\": [\n        \"https://source.unsplash.com/user/c_v_r/600x600\",\n        \"https://source.unsplash.com/user/c_v_r/600x600\"\n    ],\n    \"videoUrl\": \"https://www.youtube.com/watch?v=b7KYGaz3Cws\",\n    \"details\": [\n        {\n            \"idDetail\": 1,\n            \"value\": \"100\"\n        },\n        {\n            \"idDetail\": 2,\n            \"value\": \"50\"\n        }\n    ],\n    \"facilities\": [\n        {\n            \"idFacility\": 1\n        },\n        {\n            \"idFacility\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/property/{id} Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"propertyName\": \"Kantor Kota Subang\",\n    \"description\": \"Kantor Kota Subang\",\n    \"idCategory\": 1,\n    \"idLocation\": 3204,\n    \"status\": \"PUBLISHED\",\n    \"address\": \"Jl.Semilir Angin\",\n    \"zipCode\": \"41255\",\n    \"price\": 500000000,\n    \"rentType\": \"ANNUALY\",\n    \"googleStreet\": \"https://www.google.com/maps/embed?pb=!4v1696082662722!6m8!1m7!1sRycvg3UjZKFPE_tOsaktUw!2m2!1d-6.892645513195601!2d107.6405784874302!3f329.7155379303256!4f-0.21498841283799663!5f0.7820865974627469\",\n    \"googleMap\": \"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.56147751789024!2d107.64026446085754!3d-6.892559789845498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1696082538117!5m2!1sid!2sid\",\n    \"longitude\": \"-6.8925713\",\n    \"latitude\": \"107.6402772\",\n    \"images\": [\n        \"https://source.unsplash.com/user/c_v_r/600x600\",\n        \"https://source.unsplash.com/user/c_v_r/600x600\"\n    ],\n    \"videoUrl\": \"https://www.youtube.com/watch?v=b7KYGaz3Cws\",\n    \"details\": [\n        {\n            \"idDetail\": 1,\n            \"value\": \"100\"\n        },\n        {\n            \"idDetail\": 2,\n            \"value\": \"50\"\n        }\n    ],\n    \"facilities\": [\n        {\n            \"idFacility\": 1\n        },\n        {\n            \"idFacility\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/property/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/property/2",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"property",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wishlist",
+			"item": [
+				{
+					"name": "/v1/wishlist/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/wishlist/9",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"wishlist",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/wishlist/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"property_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/wishlist/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"wishlist",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/wishlist/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/wishlist/15",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"wishlist",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/wishlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idProperty\": 16\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/wishlist",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "/v1/category/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoryName\": \"Tanah Kosong\",\n  \"icon\": \"<i class=\\\"flaticon-like mr15\\\"></i>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"category_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category/detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"category_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/detail",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category/facility",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"category_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/facility",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"facility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoryName\": \"Tanah siap guna\",\n  \"icon\": \"<i class=\\\"flaticon-like mr15\\\"></i>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/3",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/category/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/category/3",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Institution",
+			"item": [
+				{
+					"name": "/v1/institution/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/institution/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"institution",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/institution",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"institutionName\": \"BUMN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/institution",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"institution"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/institution/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"institution_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/institution/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"institution",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/v1/category/search",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{oauth_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"category_name\",\n    \"order\": \"ASC\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/category/search",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Sep 2023 15:20:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 4,\n                \"categoryName\": \"Advertising\"\n            },\n            {\n                \"id\": 3,\n                \"categoryName\": \"Komersial\"\n            },\n            {\n                \"id\": 2,\n                \"categoryName\": \"Resindensial\"\n            },\n            {\n                \"id\": 5,\n                \"categoryName\": \"Ruang Serba Guna\"\n            },\n            {\n                \"id\": 1,\n                \"categoryName\": \"Tanah\"\n            }\n        ],\n        \"pagination\": {\n            \"count\": 5,\n            \"page\": 1,\n            \"pageSize\": 10,\n            \"totalPage\": 1\n        },\n        \"sort\": {\n            \"field\": \"category_name\",\n            \"order\": \"ASC\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/v1/institution/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"institutionName\": \"PEMPROV\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/institution/4",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"institution",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/institution/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/institution/3",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"institution",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facility",
+			"item": [
+				{
+					"name": "/v1/facility/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/facility/4",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"facility",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/facility",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facilityName\": \"Parkir\",\n    \"idCategory\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/facility",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"facility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/facility/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"idCategory\": 5,\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"facility_name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/facility/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"facility",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/v1/facility/search (sudah sesuai dengan data di excel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{oauth_access_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"keyword\": \"\",\n    \"idCategory\": null,\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"facility_name\",\n        \"order\": \"ASC\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/facility/search",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"facility",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Sep 2023 15:40:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1396"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"facilityName\": \"Air Conditioner (AC)\",\n                \"category\": [\n                    {\n                        \"id\": 1,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 1,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    },\n                    {\n                        \"id\": 1,\n                        \"idCategory\": 5,\n                        \"categoryName\": \"Ruang Serba Guna\"\n                    }\n                ]\n            },\n            {\n                \"id\": 4,\n                \"facilityName\": \"CCTV\",\n                \"category\": [\n                    {\n                        \"id\": 4,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"idCategory\": 5,\n                        \"categoryName\": \"Ruang Serba Guna\"\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"facilityName\": \"Daya Listrik\",\n                \"category\": [\n                    {\n                        \"id\": 6,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"idCategory\": 5,\n                        \"categoryName\": \"Ruang Serba Guna\"\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"facilityName\": \"Internet\",\n                \"category\": [\n                    {\n                        \"id\": 3,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"idCategory\": 5,\n                        \"categoryName\": \"Ruang Serba Guna\"\n                    }\n                ]\n            },\n            {\n                \"id\": 7,\n                \"facilityName\": \"Pagar Keliling\",\n                \"category\": [\n                    {\n                        \"id\": 7,\n                        \"idCategory\": 1,\n                        \"categoryName\": \"Tanah\"\n                    }\n                ]\n            },\n            {\n                \"id\": 5,\n                \"facilityName\": \"TV Kable\",\n                \"category\": [\n                    {\n                        \"id\": 5,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"facilityName\": \"Water Heater\",\n                \"category\": [\n                    {\n                        \"id\": 2,\n                        \"idCategory\": 2,\n                        \"categoryName\": \"Resindensial\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"idCategory\": 3,\n                        \"categoryName\": \"Komersial\"\n                    }\n                ]\n            }\n        ],\n        \"pagination\": {\n            \"count\": 7,\n            \"page\": 1,\n            \"pageSize\": 10,\n            \"totalPage\": 1\n        },\n        \"sort\": {\n            \"field\": \"facility_name\",\n            \"order\": \"ASC\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/v1/facility/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facilityName\": \"Air Conditioner (AC)\",\n    \"idCategory\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/facility/3",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"facility",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/facility/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/facility/2",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"facility",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "/v1/role/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/role/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleName\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/role",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/role/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"role_name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/role/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"role",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/role/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleName\": \"GUEST\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/role/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/role/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/role/2",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"role",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Detail",
+			"item": [
+				{
+					"name": "/v1/detail/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/detail/4",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"detail",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemName\": \"Parkir\",\n    \"icon\": \"<i class=\\\"flaticon-like mr15\\\"></i>\",\n    \"idCategory\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/detail",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/detail/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"idCategory\": 3,\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"item\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/detail/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"detail",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/detail/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemName\": \"Taman\",\n    \"icon\": \"<i class=\\\"flaticon-like mr15\\\"></i>\",\n    \"idCategory\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/detail/8",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"detail",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/detail/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/detail/8",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"detail",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "/v1/location/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"name\": \"\",\n    \"ids\": [\n        8172,\n        3471\n    ],\n    \"idParent\": null,\n    \"level\": [\n    ],\n    \"pagination\": {\n        \"pageSize\": 1000\n    },\n    \"sort\": {\n        \"field\": \"name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/location/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"location",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/location/search Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"name\": \"\",\n    \"idParent\": null,\n    \"level\": [\n        \"PROVINSI\"\n    ],\n    \"pagination\": {\n        \"pageSize\": 1000\n    },\n    \"sort\": {\n        \"field\": \"name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/location/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"location",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "/v1/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"oauth_access_token\", jsonData.accessToken);",
+									"postman.setEnvironmentVariable(\"oauth_refresh_token\", jsonData.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-client-id",
+								"value": "client_mobile",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "tarkiman",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/login",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/v1/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:12:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"398ae3c139485833b7dcf9b7d2bcb0cfee848968\",\n    \"expires\": \"2024-04-10T09:12:16.791501229+02:00\",\n    \"scope\": \"ADMIN\",\n    \"refreshToken\": \"96de556f98526706b5fd6743f042daad582e2c0b\"\n}"
+						},
+						{
+							"name": "/v1/login - 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:24:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Not Found\",\n    \"message\": \"Invalid Credential\",\n    \"code\": 0,\n    \"status\": 404\n}"
+						},
+						{
+							"name": "/v1/login - 400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:25:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bad Request\",\n    \"message\": \"username is required\",\n    \"code\": 0,\n    \"status\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "/v1/logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"oauth_access_token\", jsonData.accessToken);",
+									"postman.setEnvironmentVariable(\"oauth_refresh_token\", jsonData.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/v1/logout",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/v1/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:12:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"398ae3c139485833b7dcf9b7d2bcb0cfee848968\",\n    \"expires\": \"2024-04-10T09:12:16.791501229+02:00\",\n    \"scope\": \"ADMIN\",\n    \"refreshToken\": \"96de556f98526706b5fd6743f042daad582e2c0b\"\n}"
+						},
+						{
+							"name": "/v1/login - 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "tarkiman",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:24:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Not Found\",\n    \"message\": \"Invalid Credential\",\n    \"code\": 0,\n    \"status\": 404\n}"
+						},
+						{
+							"name": "/v1/login - 400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-client-id",
+										"value": "client_mobile",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "maman.test1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "maman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host_myqpro}}/v1/login",
+									"host": [
+										"{{host_myqpro}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Oct 2023 07:25:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Bad Request\",\n    \"message\": \"username is required\",\n    \"code\": 0,\n    \"status\": 400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"item": [
+				{
+					"name": "/v1/upload/image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/Users/user/Documents/ktp.png"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/Users/user/Documents/Screenshot at Feb 06 08-31-52.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/upload/image",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"upload",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/image/{fileName}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/image/84219d2e-77e7-4449-b072-6c42efca3cb6.png",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"image",
+								"84219d2e-77e7-4449-b072-6c42efca3cb6.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://109.123.253.227:8080/v1/image/fd1a7b08-2967-4479-9f41-1b1fce8ded3c.jpg",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://109.123.253.227:8080/v1/image/fd1a7b08-2967-4479-9f41-1b1fce8ded3c.jpg",
+							"protocol": "http",
+							"host": [
+								"109",
+								"123",
+								"253",
+								"227"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"image",
+								"fd1a7b08-2967-4479-9f41-1b1fce8ded3c.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "/public/v1/category/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/category/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/category/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keyword\": \"\",\n  \"pagination\": {\n    \"count\": 1,\n    \"page\": 1,\n    \"pageSize\": 20,\n    \"totalPage\": 10\n  },\n  \"sort\": {\n    \"field\": \"category_name\",\n    \"order\": \"ASC\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/category/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"category",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/property/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/property/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/property/search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"owner\": null,\n    \"status\": [\n        \"PUBLISHED\"\n    ],\n    \"propertyIds\": [\n        2\n    ],\n    \"locationIds\": [\n        3205\n    ],\n    \"categoryIds\": [\n        2\n    ],\n    \"facilityIds\": [\n        2\n    ],\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"created_at\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/property/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"property",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/location/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"name\": \"\",\n    \"ids\": [\n        8172,\n        3471\n    ],\n    \"idParent\": null,\n    \"level\": [],\n    \"pagination\": {\n        \"pageSize\": 1000\n    },\n    \"sort\": {\n        \"field\": \"name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/location/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"location",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/location/subdistrict/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"name\": \"\",\n    \"ids\": [\n        8172,\n        3471\n    ],\n    \"idParent\": null,\n    \"level\": [],\n    \"pagination\": {\n        \"pageSize\": 1000\n    },\n    \"sort\": {\n        \"field\": \"name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/location/subdistrict/130115",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"location",
+								"subdistrict",
+								"130115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/profile/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/profile/3",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"profile",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"test\",\n    \"password\": \"password\",\n    \"repeatPassword\": \"password\",\n    \"email\": \"test@gmail.com\",\n    \"telephone\": \"085222242222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/register",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/facility/search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"idCategory\": 5,\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"facility_name\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/facility/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"facility",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/detail/search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"\",\n    \"idCategory\": 3,\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"item\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/detail/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"detail",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/social-media",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/social-media",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"social-media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/public/v1/company-profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/public/v1/about-us",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"public",
+								"v1",
+								"about-us"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rent",
+			"item": [
+				{
+					"name": "/v1/rent/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/rent/1",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"rent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/rent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"propertyID\": 3,\n    \"tenantID\": 1,\n    \"status\": \"RENTED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/rent",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"rent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/rent/search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyword\": \"rumah\",\n    \"propertyID\":null,\n    \"status\":[\n        \"RENTED\"\n    ],\n    \"rentType\":[\n    ],\n    \"pagination\": {\n        \"count\": 1,\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalPage\": 10\n    },\n    \"sort\": {\n        \"field\": \"created_at\",\n        \"order\": \"ASC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/rent/search",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"rent",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "/v1/dashboard/summary/admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/summary/admin",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"summary",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/dashboard/summary/owner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/summary/owner",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"summary",
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/dashboard/summary/tenant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/summary/tenant",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"summary",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/dashboard/statistics/property",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/statistics/property",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"statistics",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/dashboard/statistics/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/statistics/user",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"statistics",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/dashboard/statistics/transaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/dashboard/statistics/transaction",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"statistics",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "/v1/setting",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"SOCIAL_MEDIA_ICON\",\n    \"code\": \"test\",\n    \"value\": \"test icon\",\n    \"description\": \"http\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/setting",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"setting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/setting/company-profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Jl.Cikutra Dalam\",\n    \"description\": \"desciption is\",\n    \"email\": \"admin@myqpro.id\",\n    \"image\": \"https://myqpro.id\",\n    \"telephone\": \"085222241987\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/setting/company-profile",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"setting",
+								"company-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/setting/social-media",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"facebook\": \"Jl.Cikutra Dalam\",\n    \"instagram\": \"desciption is\",\n    \"linkedin\": \"admin@myqpro.id\",\n    \"youtube\": \"https://myqpro.id\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/setting/social-media",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"setting",
+								"social-media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/v1/setting",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{oauth_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"SOCIAL_MEDIA_ICON\",\n    \"code\": \"test2\",\n    \"value\": \"test update\",\n    \"description\": \"deskripsinya saya update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_myqpro}}/v1/setting",
+							"host": [
+								"{{host_myqpro}}"
+							],
+							"path": [
+								"v1",
+								"setting"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host_myqpro}}/health",
+					"host": [
+						"{{host_myqpro}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
