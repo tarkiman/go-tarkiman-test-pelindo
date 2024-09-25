@@ -37,6 +37,26 @@ lint:
 
 generate:
 	go generate ./...
+
+# migrate_create:
+# 	@read -p "migration name (do not use space): " NAME \
+#   	&& migrate create -ext sql -dir ./migrations/domain $${NAME}
+
+# migrate_up:
+# 	@migrate -path ./migrations/domain -database "oracle://${DB.ORACLE.WRITE.USER}:${DB.ORACLE.WRITE.PASSWORD}@${DB.ORACLE.WRITE.HOST}:${DB.ORACLE.WRITE.PORT})/${DB.ORACLE.WRITE.NAME}" up $(MIGRATION_STEP)
+
+# migrate_down:
+# 	@migrate -path ./migrations/domain -database "oracle://${DB.ORACLE.WRITE.USER}:${DB.ORACLE.WRITE.PASSWORD}@${DB.ORACLE.WRITE.HOST}:${DB.ORACLE.WRITE.PORT})/${DB.ORACLE.WRITE.NAME}" down $(MIGRATION_STEP)
+
+# migrate_force:
+# 	@read -p "please enter the migration version (the migration filename prefix): " VERSION \
+#   	&& migrate -path ./migrations/domain -database "oracle://${DB.ORACLE.WRITE.USER}:${DB.ORACLE.WRITE.PASSWORD}@${DB.ORACLE.WRITE.HOST}:${DB.ORACLE.WRITE.PORT})/${DB.ORACLE.WRITE.NAME}" force $${VERSION}
+
+# migrate_version:
+# 	@migrate -path ./migrations/domain -database "oracle://${DB.ORACLE.WRITE.USER}:${DB.ORACLE.WRITE.PASSWORD}@${DB.ORACLE.WRITE.HOST}:${DB.ORACLE.WRITE.PORT})/${DB.ORACLE.WRITE.NAME}" version 
+
+# migrate_drop:
+# 	@migrate -path ./migrations/domain -database "oracle://${DB.ORACLE.WRITE.USER}:${DB.ORACLE.WRITE.PASSWORD}@${DB.ORACLE.WRITE.HOST}:${DB.ORACLE.WRITE.PORT})/${DB.ORACLE.WRITE.NAME}" drop
 	
 .PHONY: test coverage engine clean build docker run stop lint-prepare lint documents generate
 

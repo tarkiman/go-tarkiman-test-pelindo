@@ -16,10 +16,10 @@ const (
 
 // Task is a sample parent entity model.
 type Task struct {
-	ID          uuid.UUID   `db:"id"`
-	Title       string      `db:"title" validate:"required"`
-	Description null.String `db:"description"`
-	Status      null.String `db:"status"`
+	ID          uuid.UUID   `db:"ID"`
+	Title       string      `db:"TITLE" validate:"required"`
+	Description null.String `db:"DESCRIPTION"`
+	Status      null.String `db:"STATUS"`
 	CreatedAt   null.Time   `db:"created_at"`
 	CreatedBy   null.Int    `db:"created_by"`
 	UpdatedAt   null.Time   `db:"updated_at"`

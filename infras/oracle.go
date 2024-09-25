@@ -3,16 +3,18 @@ package infras
 import (
 	"database/sql"
 	"fmt"
-	"net/url"
 
+	// "github.com/golang-migrate/migrate/v4"
+	// "github.com/golang-migrate/migrate/v4/database/oracle"
 	"github.com/tarkiman/go/shared/failure"
 
 	"github.com/tarkiman/go/configs"
 	// use Oracle driver
 	// _ "github.com/go-sql-driver/mysql"
-	_ "github.com/godror/godror"
+	// _ "github.com/godror/godror"
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog/log"
+	_ "github.com/sijms/go-ora/v2"
 )
 
 const (
@@ -66,13 +68,12 @@ func CreateOracleReadConn(config configs.Config) *sqlx.DB {
 // CreateDBConnection creates a database connection.
 func CreateDBConnection(name, username, password, host, port, dbName, timeZone string) *sqlx.DB {
 	descriptor := fmt.Sprintf(
-		"%s:%s@tcp(%s:%s)/%s?charset=utf8&loc=%s&parseTime=true",
+		"oracle://%s:%s@%s:%s/%s",
 		username,
 		password,
 		host,
 		port,
-		dbName,
-		url.QueryEscape(timeZone))
+		dbName)
 	db, err := sqlx.Connect("oracle", descriptor)
 	if err != nil {
 		log.
@@ -125,3 +126,25 @@ func (m *OracleConn) WithTransaction(block Block) (err error) {
 	err = tx.Commit()
 	return
 }
+
+// func (m *OracleConn) RunMigration(config *configs.Config) {
+// 	log.Info().Msg("Oracle Migrating...")
+// 	driver, err := oracle.WithInstance(m.Write.DB, &oracle.Config{
+// 		DatabaseName: config.DB.Oracle.Write.Name,
+// 	})
+// 	if err != nil {
+// 		log.Fatal().Err(err).Msg("error oracle instance")
+// 	}
+
+// 	mgr, err := migrate.NewWithDatabaseInstance("file://./migrations/domain", "oracle", driver)
+// 	if err != nil {
+// 		log.Fatal().Err(err).Msg("migrating failed")
+// 	}
+
+// 	err = mgr.Up()
+// 	if err != nil && err != migrate.ErrNoChange {
+// 		log.Fatal().Err(err).Msgf("An error occurred while syncing the database: %v", err)
+// 	}
+
+// 	log.Info().Msg("Oracle Migrate Finished...")
+// }

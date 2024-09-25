@@ -34,7 +34,7 @@ var (
 				updated_by, 
 				deleted_at, 
 				deleted_by
-			FROM tasks`,
+			FROM temp.tasks;`,
 		selectDataWithFilter: `
 			SELECT
 				id, 
@@ -42,9 +42,9 @@ var (
 				description, 
 				status,
 				COUNT(id) OVER() as count
-			FROM tasks`,
+			FROM temp.tasks;`,
 		insertData: `
-			INSERT INTO tasks (
+			INSERT INTO temp.tasks (
 			    id,
 				title, 
 				description,
@@ -55,20 +55,20 @@ var (
 				:title, 
 				:description,
 				:status,
-				:created_by)`,
+				:created_by);`,
 		updateData: `
-				UPDATE tasks SET
+				UPDATE temp.tasks SET
 					title=:title, 
 					description=:description, 
 					status=:status,
 					updated_by=:updated_by
-				WHERE id=:id`,
-		deleteData: `DELETE FROM tasks WHERE id = ?`,
+				WHERE id=:id;`,
+		deleteData: `DELETE FROM temp.tasks WHERE id = ?;`,
 		softDeleteData: `
-				UPDATE tasks SET
+				UPDATE temp.tasks SET
 					deleted_at=:deleted_at, 
 					deleted_by=:deleted_by
-				WHERE id=:id`,
+				WHERE id=:id;`,
 	}
 )
 
@@ -127,9 +127,12 @@ func (r *TaskRepositoryOracle) ResolveByFilter(filter TaskFilter) (tasks []TaskF
 		return
 	}
 
+	query = "SELECT id, title, description, status FROM anonymous.tasks"
+
 	err = r.DB.Read.Select(&tasks, query, args...)
 	if err != nil {
-		logger.ErrorWithStack(err)
+		log.Err(err)
+		// logger.ErrorWithStack(err)
 	}
 	// use write DB in case the data hasn't been replicated to read DB
 	if len(tasks) == 0 {

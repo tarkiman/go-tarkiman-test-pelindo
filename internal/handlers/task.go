@@ -32,7 +32,7 @@ func ProvideTaskHandler(TaskService task.TaskService, authMiddleware *middleware
 func (h *TaskHandler) Router(r chi.Router) {
 	r.Route("/tasks", func(r chi.Router) {
 		r.Group(func(r chi.Router) {
-			r.Use(h.AuthMiddleware.ClientCredential)
+			// r.Use(h.AuthMiddleware.ClientCredential)
 			r.Post("/", h.CreateTask)
 			r.Get("/", h.ResolveTaskByFilter)
 			r.Get("/{id}", h.ResolveTaskByID)
